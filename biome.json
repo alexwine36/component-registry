@@ -1,0 +1,58 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "extends": ["ultracite"],
+  "javascript": {
+    "globals": ["Liveblocks", "describe", "test", "expect"]
+  },
+
+  "files": {
+    "ignore": []
+  },
+  "linter": {
+    "rules": {
+      "complexity": {
+        "noForEach": "off"
+      },
+      "style": {
+        "useSelfClosingElements": {
+          "level": "error",
+          "fix": "safe"
+        },
+        "useNodejsImportProtocol": {
+          "level": "error",
+          "fix": "safe"
+        }
+      }
+    }
+  },
+  "overrides": [
+    {
+      "include": ["*.svelte", "*.astro", "*.vue"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedImports": "off",
+            "noUnusedVariables": "off"
+          },
+          "style": {
+            "useConst": "off",
+            "useImportType": "off"
+          }
+        }
+      }
+    },
+    {
+      "include": ["packages/rich-text/**"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noExplicitAny": "off"
+          },
+          "style": {
+            "noArguments": "off"
+          }
+        }
+      }
+    }
+  ]
+}

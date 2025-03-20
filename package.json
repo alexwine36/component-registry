@@ -1,41 +1,41 @@
 {
-  "name": "registry-template",
-  "version": "0.1.0",
-  "private": true,
+  "name": "turbo-starter",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "registry:build": "shadcn build",
-    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
-    "add:comp": "pnpm dlx shadcn@latest add"
-  },
-  "dependencies": {
-    "@radix-ui/react-label": "^2.1.1",
-    "@radix-ui/react-slot": "^1.1.1",
-    "@tanstack/react-query": "^5.64.1",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.471.1",
-    "next": "15.1.4",
-    "next-themes": "^0.4.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "shadcn": "2.4.0-canary.12",
-    "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.24.1"
+    "analyze:ci": "turbo analyze:ci",
+    "build": "turbo build",
+    "clean": "pnpm clean:modules && pnpm clean:main",
+    "clean:main": "git clean -xdf .turbo node_modules",
+    "clean:modules": "turbo clean",
+    "dev": "turbo dev",
+    "fix": "pnpm sync:fix",
+    "format": "ultracite format",
+    "lint": "ultracite lint",
+    "lint:ci": "biome check --diagnostic-level=error",
+    "sync:fix": "run-s sync:format sync:fix-* format && pnpm install",
+    "sync:fix-mismatches": "syncpack fix-mismatches",
+    "sync:fix-semver": "syncpack set-semver-ranges",
+    "sync:format": "syncpack format",
+    "sync:lint": "syncpack lint",
+    "sync:list": "syncpack list",
+    "sync:update": "pnpm syncpack update",
+    "test": "turbo test",
+    "test:ci": "pnpm vitest run",
+    "typecheck": "turbo typecheck"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.4",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
-  }
+    "@biomejs/biome": "^1.9.4",
+    "@turbo/gen": "^2.4.4",
+    "jsdom": "^26.0.0",
+    "npm-run-all": "^4.1.5",
+    "syncpack": "^13.0.3",
+    "turbo": "^2.4.4",
+    "ultracite": "^4.1.21",
+    "vitest": "catalog:",
+    "yaml": "^2.7.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "pnpm@9.15.2"
 }
