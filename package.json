@@ -2,6 +2,7 @@
   "name": "turbo-starter",
   "version": "1.0.0",
   "scripts": {
+    "analyze:ci": "turbo analyze:ci",
     "build": "turbo build",
     "clean": "pnpm clean:modules && pnpm clean:main",
     "clean:main": "git clean -xdf .turbo node_modules",

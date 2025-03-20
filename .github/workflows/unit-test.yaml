@@ -6,8 +6,6 @@ on:
       - main
   pull_request:
 
-env:
-  DATABASE_URL: postgres://postgres:postgres@localhost:5432/test
 
 concurrency: 
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -17,25 +15,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    services:
-      # Label used to access the service container
-      postgres:
-        # Docker Hub image
-        image: postgres
-        # Provide the password for postgres
-        env:
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_USER: postgres
-          POSTGRES_DB: test
-        # Set health checks to wait until postgres has started
-        ports:
-        # Maps tcp port 5432 on service container to the host
-          - 5432:5432
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
     steps:
       - uses: actions/checkout@v4
         with:
@@ -43,8 +22,6 @@ jobs:
 
       - uses: ./.github/actions/ci-setup
 
-      - name: Migrate Database
-        run: pnpm db:push
 
       - name: Running Test...
         run: pnpm test:ci

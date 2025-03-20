@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "add:comp": "pnpm dlx shadcn@latest add",
+    "analyze:ci": "nextjs-bundle-analysis report",
     "build": "next build",
     "dev": "next dev --turbopack",
     "lint": "next lint",
@@ -29,6 +30,7 @@
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@repo/nextjs-bundle-analysis": "workspace:*",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
