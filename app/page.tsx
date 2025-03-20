@@ -1,8 +1,7 @@
-import * as React from "react"
-import { OpenInV0Button } from "@/components/open-in-v0-button"
-import { HelloWorld } from "@/registry/new-york/hello-world/hello-world"
-import { ExampleForm } from "@/registry/new-york/example-form/example-form"
 import PokemonPage from "@/registry/new-york/complex-component/page"
+import { ExampleForm } from "@/registry/new-york/example-form/example-form"
+import { HelloWorld } from "@/registry/new-york/hello-world/hello-world"
+import { CodeActions } from "../registry/new-york/common/components/code-actions"
 
 // This page displays items from the custom registry.
 // You are free to implement this with your own design as needed.
@@ -22,7 +21,7 @@ export default function Home() {
             <h2 className="text-sm text-muted-foreground sm:pl-3">
               A simple hello world component
             </h2>
-            <OpenInV0Button name="hello-world" className="w-fit" />
+            <CodeActions name="hello-world"  />
           </div>
           <div className="flex items-center justify-center min-h-[400px] relative">
             <HelloWorld />
@@ -34,7 +33,7 @@ export default function Home() {
             <h2 className="text-sm text-muted-foreground sm:pl-3">
               A contact form with Zod validation.
             </h2>
-            <OpenInV0Button name="example-form" className="w-fit" />
+            <CodeActions name="example-form"  />
           </div>
           <div className="flex items-center justify-center min-h-[500px] relative">
             <ExampleForm />
@@ -46,7 +45,7 @@ export default function Home() {
             <h2 className="text-sm text-muted-foreground sm:pl-3">
               A complex component showing hooks, libs and components.
             </h2>
-            <OpenInV0Button name="complex-component" className="w-fit" />
+            <CodeActions name="complex-component"  />
           </div>
           <div className="flex items-center justify-center min-h-[400px] relative">
             <PokemonPage />
