@@ -1,18 +1,13 @@
-'use client'
+'use client';
 
-import { CopyButton } from "../../copy-to-clipboard/components/copy-button";
-
+import { CopyButton } from '../../copy-to-clipboard/components/copy-button';
 
 type CopyAddButtonProps = {
-    name: string;
-} & React.ComponentProps<typeof CopyButton>["buttonProps"]
+  name: string;
+} & React.ComponentProps<typeof CopyButton>['buttonProps'];
 
-export function CopyAddButton({name, ...props}: CopyAddButtonProps) {
+export function CopyAddButton({ name, ...props }: CopyAddButtonProps) {
+  const value = `pnpm dlx shadcn@latest add ${window.location.origin}/r/${name}.json`;
 
-    const value = `pnpm dlx shadcn@latest add ${window.location.origin}/r/${name}.json`
-
-    return (
-        <CopyButton  buttonProps={props} value={value} />
-    )
-} 
-
+  return <CopyButton buttonProps={props} value={value} />;
+}
