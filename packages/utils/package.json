@@ -1,25 +1,25 @@
 {
   "name": "@repo/utils",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "scripts": {
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "test": "NODE_ENV=test vitest run",
     "test:watch": "NODE_ENV=test vitest watch",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
-   "dependencies": {
-    "@t3-oss/env-nextjs": "^0.11.1",
-    "zod": "catalog:",
-    "react": "^19.0.0"
+  "dependencies": {
+    "@t3-oss/env-nextjs": "catalog:",
+    "react": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*",
     "@repo/testing": "workspace:*",
-    "@types/node": "22.10.5",
-    "@types/react": "19.0.2",
-    "@types/react-dom": "^19.0.2",
-    "typescript": "^5.7.2",
-    "vitest": "^2.1.8"
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
   }
 }

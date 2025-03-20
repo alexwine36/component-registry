@@ -18,9 +18,9 @@
     "sync:lint": "syncpack lint",
     "sync:list": "syncpack list",
     "sync:update": "pnpm syncpack update",
-    "typecheck": "turbo typecheck",
     "test": "turbo test",
-    "test:ci": "pnpm vitest run"
+    "test:ci": "pnpm vitest run",
+    "typecheck": "turbo typecheck"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
