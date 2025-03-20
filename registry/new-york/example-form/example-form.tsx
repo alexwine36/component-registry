@@ -1,18 +1,18 @@
 "use client"
 
-import * as React from "react"
+import { Button } from "@/registry/new-york/common/components/ui/button"
 import {
   Card,
-  CardTitle,
-  CardHeader,
-  CardDescription,
   CardContent,
+  CardDescription,
   CardFooter,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea"
+  CardHeader,
+  CardTitle,
+} from "@/registry/new-york/common/components/ui/card"
+import { Input } from "@/registry/new-york/common/components/ui/input"
+import { Label } from "@/registry/new-york/common/components/ui/label"
+import { Textarea } from "@/registry/new-york/common/components/ui/textarea"
+import * as React from "react"
 import { z } from "zod"
 
 const exampleFormSchema = z.object({
