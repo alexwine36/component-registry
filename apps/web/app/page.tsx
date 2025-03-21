@@ -1,7 +1,7 @@
-import PokemonPage from '@/registry/new-york/complex-component/page';
-import { ExampleForm } from '@/registry/new-york/example-form/example-form';
-import { HelloWorld } from '@/registry/new-york/hello-world/hello-world';
-import { CodeActions } from '../registry/new-york/common/components/code-actions';
+import { CodeActions } from '@repo/ui/registry/new-york/common/components/code-actions';
+import PokemonPage from '@repo/ui/registry/new-york/complex-component/page';
+import { ExampleForm } from '@repo/ui/registry/new-york/example-form/example-form';
+import { HelloWorld } from '@repo/ui/registry/new-york/hello-world/hello-world';
 
 // This page displays items from the custom registry.
 // You are free to implement this with your own design as needed.
