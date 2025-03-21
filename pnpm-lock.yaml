@@ -81,16 +81,16 @@ importers:
         specifier: workspace:*
         version: link:../../packages/utils
       '@tailwindcss/postcss':
-        specifier: ^4.0.15
+        specifier: 4.0.15
         version: 4.0.15
       '@tanstack/react-query':
         specifier: 5.64.1
         version: 5.64.1(react@19.0.0)
       class-variance-authority:
-        specifier: ^0.7.1
+        specifier: 0.7.1
         version: 0.7.1
       clsx:
-        specifier: ^2.1.1
+        specifier: 2.1.1
         version: 2.1.1
       lucide-react:
         specifier: 0.471.1
@@ -102,7 +102,7 @@ importers:
         specifier: 0.4.4
         version: 0.4.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       postcss:
-        specifier: ^8.5.3
+        specifier: 8.5.3
         version: 8.5.3
       react:
         specifier: 'catalog:'
@@ -111,13 +111,13 @@ importers:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
       tailwind-merge:
-        specifier: ^3.0.2
+        specifier: 3.0.2
         version: 3.0.2
       tailwindcss:
-        specifier: ^4.0.15
+        specifier: 4.0.15
         version: 4.0.15
       tw-animate-css:
-        specifier: ^1.2.4
+        specifier: 1.2.4
         version: 1.2.4
       zod:
         specifier: 'catalog:'
@@ -2929,10 +2929,6 @@ packages:
 
   postcss@8.4.31:
     resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
-    engines: {node: ^10 || ^12 || >=14}
-
-  postcss@8.4.49:
-    resolution: {integrity: sha512-OCVPnIObs4N29kxTjzLfUryOkvZEq+pf8jTF0lg8E7uETuWHA+v7j3c/xJmiqpX450191LlmZfUKkXxkTry7nA==}
     engines: {node: ^10 || ^12 || >=14}
 
   postcss@8.5.3:
@@ -6594,12 +6590,6 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  postcss@8.4.49:
-    dependencies:
-      nanoid: 3.3.8
-      picocolors: 1.1.1
-      source-map-js: 1.2.1
-
   postcss@8.5.3:
     dependencies:
       nanoid: 3.3.8
@@ -7416,7 +7406,7 @@ snapshots:
   vite@5.4.14(@types/node@22.13.10)(lightningcss@1.29.2):
     dependencies:
       esbuild: 0.21.5
-      postcss: 8.4.49
+      postcss: 8.5.3
       rollup: 4.36.0
     optionalDependencies:
       '@types/node': 22.13.10
