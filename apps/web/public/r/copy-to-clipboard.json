@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "copy-to-clipboard",
+  "type": "registry:component",
+  "title": "Copy to Clipboard",
+  "description": "A button that copies a string to the clipboard",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/copy-to-clipboard/components/copy-button.tsx",
+      "content": "import {\n  Button,\n  type ButtonProps,\n} from '@/registry/new-york/common/components/ui/button';\nimport { copyToClipboard } from '@/registry/new-york/copy-to-clipboard/lib/copy-to-clipboard';\nimport { Clipboard } from 'lucide-react';\n\ntype CopyButtonProps = {\n  buttonProps?: ButtonProps;\n  value: string;\n};\n\nexport const CopyButton = ({ buttonProps, value }: CopyButtonProps) => {\n  const handleClick = () => {\n    copyToClipboard(value);\n  };\n  return (\n    <Button\n      onClick={handleClick}\n      variant=\"outline\"\n      size=\"icon\"\n      {...buttonProps}\n    >\n      <Clipboard />\n    </Button>\n  );\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "registry/new-york/copy-to-clipboard/lib/copy-to-clipboard.ts",
+      "content": "export function copyToClipboard(text: string) {\n  if (!navigator.clipboard) {\n    fallbackCopyTextToClipboard(text);\n    return;\n  }\n  navigator.clipboard.writeText(text);\n}\n\nfunction fallbackCopyTextToClipboard(text: string) {\n  const textArea = document.createElement('textarea');\n\n  textArea.value = text;\n\n  // Avoid scrolling to bottom\n\n  textArea.style.top = '0';\n\n  textArea.style.left = '0';\n\n  textArea.style.position = 'fixed';\n\n  document.body.appendChild(textArea);\n\n  textArea.focus();\n\n  textArea.select();\n\n  try {\n    const _successful = document.execCommand('copy');\n\n    // var msg = successful ? \"successful\" : \"unsuccessful\"\n\n    // console.log(\"Fallback: Copying text command was \" + msg)\n  } catch (err) {\n    // console.error(\"Fallback: Oops, unable to copy\", err)\n  }\n\n  document.body.removeChild(textArea);\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

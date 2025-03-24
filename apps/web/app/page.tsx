@@ -1,5 +1,6 @@
 import { CodeActions } from '@repo/ui/registry/new-york/common/components/code-actions';
 import PokemonPage from '@repo/ui/registry/new-york/complex-component/page';
+import { CopyButton } from '@repo/ui/registry/new-york/copy-to-clipboard/components/copy-button';
 import { ExampleForm } from '@repo/ui/registry/new-york/example-form/example-form';
 import { HelloWorld } from '@repo/ui/registry/new-york/hello-world/hello-world';
 
@@ -25,6 +26,18 @@ export default function Home() {
           </div>
           <div className="relative flex min-h-[400px] items-center justify-center">
             <HelloWorld />
+          </div>
+        </div>
+
+        <div className="relative flex min-h-[450px] flex-col gap-4 rounded-lg border p-4">
+          <div className="flex items-center justify-between">
+            <h2 className="text-muted-foreground text-sm sm:pl-3">
+              A simple copy to clipboard button
+            </h2>
+            <CodeActions name="copy-to-clipboard" />
+          </div>
+          <div className="relative flex min-h-[400px] items-center justify-center">
+            <CopyButton value="something" />
           </div>
         </div>
 

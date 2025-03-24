@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
     "registry:build": "shadcn build",
     "registry:copy": "tsx scripts/copy-components.ts",
-    "generate": "run-s registry:build registry:copy"
+    "registry:generate": "tsx scripts/generate-registry.ts",
+    "generate": "run-s registry:generate registry:build registry:copy"
   },
   "dependencies": {
     "@radix-ui/react-label": "2.1.2",
