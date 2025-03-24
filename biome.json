@@ -6,7 +6,7 @@
   },
 
   "files": {
-    "ignore": []
+    "ignore": ["**/*.cjs", "**/public/**/*.json"]
   },
   "linter": {
     "rules": {

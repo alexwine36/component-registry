@@ -2,19 +2,24 @@
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["@repo/ui#generate", "^build"],
       "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
     "typecheck": {
-      "dependsOn": ["^typecheck"]
+      "dependsOn": ["@repo/ui#generate", "^build", "^typecheck"]
     },
     "dev": {
+      "dependsOn": ["@repo/ui#generate"],
       "persistent": true,
       "cache": false
     },
     "analyze:ci": {
       "dependsOn": ["build"],
       "outputs": [".next/analyze/**"]
-    }
+    },
+    "clean": {
+      "cache": false
+    },
+    "generate": {}
   }
 }

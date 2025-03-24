@@ -120,7 +120,7 @@ jobs:
         id: fc
         with:
           issue-number: ${{ github.event.number }}
-          body-includes: '<!-- __NEXTJS_BUNDLE_web -->'
+          body-includes: '<!-- __NEXTJS_BUNDLE_registry-template -->'
 
       - name: Create Comment
         uses: peter-evans/create-or-update-comment@v3
