@@ -6,7 +6,7 @@
       "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
     "typecheck": {
-      "dependsOn": ["^typecheck"]
+      "dependsOn": ["@repo/ui#generate", "^typecheck"]
     },
     "dev": {
       "dependsOn": ["@repo/ui#generate"],
