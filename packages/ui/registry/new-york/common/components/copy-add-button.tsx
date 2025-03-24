@@ -1,5 +1,6 @@
 'use client';
 import { getUrl } from '@repo/utils';
+import { toast } from 'sonner';
 import { CopyButton } from '../../copy-to-clipboard/components/copy-button';
 
 type CopyAddButtonProps = {
@@ -9,5 +10,9 @@ type CopyAddButtonProps = {
 export function CopyAddButton({ name, ...props }: CopyAddButtonProps) {
   const value = `pnpm dlx shadcn@latest add ${getUrl(`/r/${name}.json`)}`;
 
-  return <CopyButton buttonProps={props} value={value} />;
+  const postClick = () => {
+    console.log('POST CLICK');
+    toast('Copied to clipboard');
+  };
+  return <CopyButton postClick={postClick} buttonProps={props} value={value} />;
 }

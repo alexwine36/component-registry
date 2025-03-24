@@ -10,10 +10,16 @@ import { Clipboard } from 'lucide-react';
 type CopyButtonProps = {
   buttonProps?: ButtonProps;
   value: string;
+  postClick?: () => void;
 };
 
-export const CopyButton = ({ buttonProps, value }: CopyButtonProps) => {
+export const CopyButton = ({
+  buttonProps,
+  value,
+  postClick,
+}: CopyButtonProps) => {
   const handleClick = () => {
+    postClick?.();
     copyToClipboard(value);
   };
   return (

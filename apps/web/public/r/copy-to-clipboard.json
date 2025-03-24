@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/new-york/copy-to-clipboard/components/copy-button.tsx",
-      "content": "'use client';\n\nimport {\n  Button,\n  type ButtonProps,\n} from '@/registry/new-york/common/components/ui/button';\nimport { copyToClipboard } from '@/registry/new-york/copy-to-clipboard/lib/copy-to-clipboard';\nimport { Clipboard } from 'lucide-react';\n\ntype CopyButtonProps = {\n  buttonProps?: ButtonProps;\n  value: string;\n};\n\nexport const CopyButton = ({ buttonProps, value }: CopyButtonProps) => {\n  const handleClick = () => {\n    copyToClipboard(value);\n  };\n  return (\n    <Button\n      onClick={handleClick}\n      variant=\"outline\"\n      size=\"icon\"\n      {...buttonProps}\n    >\n      <Clipboard />\n    </Button>\n  );\n};\n",
+      "content": "'use client';\n\nimport {\n  Button,\n  type ButtonProps,\n} from '@/registry/new-york/common/components/ui/button';\nimport { copyToClipboard } from '@/registry/new-york/copy-to-clipboard/lib/copy-to-clipboard';\nimport { Clipboard } from 'lucide-react';\n\ntype CopyButtonProps = {\n  buttonProps?: ButtonProps;\n  value: string;\n  postClick?: () => void;\n};\n\nexport const CopyButton = ({\n  buttonProps,\n  value,\n  postClick,\n}: CopyButtonProps) => {\n  const handleClick = () => {\n    postClick?.();\n    copyToClipboard(value);\n  };\n  return (\n    <Button\n      onClick={handleClick}\n      variant=\"outline\"\n      size=\"icon\"\n      {...buttonProps}\n    >\n      <Clipboard />\n    </Button>\n  );\n};\n",
       "type": "registry:ui"
     },
     {
