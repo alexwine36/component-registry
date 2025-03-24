@@ -43,25 +43,25 @@ export function ExampleForm() {
       setPending(true);
 
       const formData = new FormData(e.target as HTMLFormElement);
-      const data = Object.fromEntries(formData.entries());
-      const result = exampleFormSchema.safeParse(data);
+      // const data = Object.fromEntries(formData.entries());
+      // const result = exampleFormSchema.safeParse(data);
 
-      if (!result.success) {
-        setState({
-          ...state,
-          errors: Object.fromEntries(
-            Object.entries(result.error.flatten().fieldErrors).map(
-              ([key, value]) => [key, value?.[0] ?? '']
-            )
-          ) as Record<keyof typeof state.errors, string>,
-        });
-        setPending(false);
-        return;
-      }
-
+      // if (!result.success) {
+      //   setState({
+      //     ...state,
+      //     errors: Object.fromEntries(
+      //       Object.entries(result.error.flatten().fieldErrors).map(
+      //         ([key, value]) => [key, value?.[0] ?? '']
+      //       )
+      //     ) as Record<keyof typeof state.errors, string>,
+      //   });
+      //   setPending(false);
+      //   return;
+      // }
+      console.log('Form submitted:', formData);
       setPending(false);
     },
-    [state]
+    []
   );
 
   return (
