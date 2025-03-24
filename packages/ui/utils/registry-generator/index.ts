@@ -75,4 +75,15 @@ export class Registry {
       items: this.items.map((item) => item.formatItem(this.folder)),
     };
   }
+
+  formatRegistryComponents() {
+    const base = this.formatData();
+    return base.items.reduce(
+      (acc, item) => {
+        acc[item.name] = item;
+        return acc;
+      },
+      {} as Record<string, RegistryItemDef>
+    );
+  }
 }

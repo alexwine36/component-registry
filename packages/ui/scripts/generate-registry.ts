@@ -7,6 +7,11 @@ const generateRegistry = () => {
   const data = RegistryDef.formatData();
 
   fs.writeFileSync('./registry.json', JSON.stringify(data, null, 2));
+
+  fs.writeFileSync(
+    './registry-items.json',
+    JSON.stringify(RegistryDef.formatRegistryComponents(), null, 2)
+  );
 };
 
 generateRegistry();
