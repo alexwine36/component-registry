@@ -5,8 +5,8 @@ import * as React from 'react';
 import { Button } from '@/registry/new-york/common/components/ui/button';
 import { Input } from '@/registry/new-york/common/components/ui/input';
 import { cn } from '@/registry/new-york/common/lib/utils';
-import { DataTableFacetedFilter } from '@/registry/new-york/data-table/components/data-table-faceted-filter';
-import { DataTableViewOptions } from '@/registry/new-york/data-table/components/data-table-view-options';
+import { DataTableFacetedFilter } from '@/registry/new-york/data-table/components/ui/data-table-faceted-filter';
+import { DataTableViewOptions } from '@/registry/new-york/data-table/components/ui/data-table-view-options';
 import type { UseDataTableReturn } from '@/registry/new-york/data-table/lib/data-table-types';
 
 interface DataTableToolbarProps<TData, TValue>

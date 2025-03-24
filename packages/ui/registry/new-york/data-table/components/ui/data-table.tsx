@@ -1,5 +1,5 @@
-import { DataTableComponent } from '@/registry/new-york/data-table/components/data-table-component';
-import { DataTableToolbar } from '@/registry/new-york/data-table/components/data-table-toolbar';
+import { DataTableComponent } from '@/registry/new-york/data-table/components/ui/data-table-component';
+import { DataTableToolbar } from '@/registry/new-york/data-table/components/ui/data-table-toolbar';
 import type { UseDataTableReturn } from '@/registry/new-york/data-table/lib/data-table-types';
 
 type DataTableProps<TData, TValue> = UseDataTableReturn<TData, TValue> & {};

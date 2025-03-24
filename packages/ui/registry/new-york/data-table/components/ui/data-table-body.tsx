@@ -1,13 +1,13 @@
-import { flexRender } from '@tanstack/react-table';
 import type { DataTableComponentProps } from '@/registry/new-york/data-table/lib/data-table-types';
+import { flexRender } from '@tanstack/react-table';
 
+import { Skeleton } from '@/registry/new-york/common/components/ui/skeleton';
 import {
   TableBody,
   TableCell,
   TableRow,
 } from '@/registry/new-york/common/components/ui/table';
 import { cn } from '@/registry/new-york/common/lib/utils';
-import { Skeleton } from '@/registry/new-york/common/components/ui/skeleton';
 
 export const DataTableBody = <TData, TValue>({
   columns,

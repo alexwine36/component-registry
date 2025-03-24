@@ -1,12 +1,16 @@
 import { useMemo, useState } from 'react';
 
+import { Checkbox } from '@/registry/new-york/common/components/ui/checkbox';
 import type {
   DataTableProps,
   UseDataTableReturn,
 } from '@/registry/new-york/data-table/lib/data-table-types';
-import { Checkbox } from '@/registry/new-york/common/components/ui/checkbox';
 
 import {
+  type ColumnFiltersState,
+  type RowSelectionState,
+  type SortingState,
+  type VisibilityState,
   getCoreRowModel,
   getFacetedRowModel,
   getFacetedUniqueValues,
@@ -14,10 +18,6 @@ import {
   getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
-  type ColumnFiltersState,
-  type RowSelectionState,
-  type SortingState,
-  type VisibilityState,
 } from '@tanstack/react-table';
 // import { getFacetedUniqueValues } from "../components/custom/data-table/utils/get-faceted-values";
 

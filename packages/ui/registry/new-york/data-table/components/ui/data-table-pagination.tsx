@@ -1,9 +1,3 @@
-import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  ChevronsLeft,
-  ChevronsRight,
-} from 'lucide-react';
 import { Button } from '@/registry/new-york/common/components/ui/button';
 import {
   Select,
@@ -14,6 +8,12 @@ import {
 } from '@/registry/new-york/common/components/ui/select';
 import { Separator } from '@/registry/new-york/common/components/ui/separator';
 import type { Table } from '@tanstack/react-table';
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ChevronsLeft,
+  ChevronsRight,
+} from 'lucide-react';
 
 interface DataTablePaginationProps<TData> {
   table: Table<TData>;
@@ -110,4 +110,3 @@ export function DataTablePagination<TData>({
     </>
   );
 }
-

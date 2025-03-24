@@ -17,8 +17,11 @@ import {
   PopoverTrigger,
 } from '@/registry/new-york/common/components/ui/popover';
 import { cn } from '@/registry/new-york/common/lib/utils';
+import type {
+  Column,
+  Header,
+} from '@/registry/new-york/data-table/lib/data-table-types';
 import { toSentenceCase } from '@/registry/new-york/data-table/lib/data-table-utils';
-import type { Column, Header } from '@/registry/new-york/data-table/lib/data-table-types';
 
 interface DataTableViewOptionsProps<TData> {
   //   table: Table<TData>;

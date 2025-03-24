@@ -4,9 +4,9 @@ import {
   TableHeader,
   TableRow,
 } from '@/registry/new-york/common/components/ui/table';
-import { DataTableColumnHeader } from '@/registry/new-york/data-table/components/data-table-column-header';
-import { DataTableBody } from '@/registry/new-york/data-table/components/data-table-body';
-import { DataTablePagination } from '@/registry/new-york/data-table/components/data-table-pagination';
+import { DataTableBody } from '@/registry/new-york/data-table/components/ui/data-table-body';
+import { DataTableColumnHeader } from '@/registry/new-york/data-table/components/ui/data-table-column-header';
+import { DataTablePagination } from '@/registry/new-york/data-table/components/ui/data-table-pagination';
 import type { DataTableComponentProps } from '@/registry/new-york/data-table/lib/data-table-types';
 
 // TODO: Improve functionality of DataTable

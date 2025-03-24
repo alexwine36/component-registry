@@ -18,7 +18,7 @@ export const ExampleContainer = ({ name, children }: ExampleContainerProps) => {
           </h2>
         </div>
 
-        <CodeActions name="hello-world" />
+        <CodeActions name={name} />
       </div>
       <div className="relative flex min-h-[400px] items-center justify-center">
         {children}

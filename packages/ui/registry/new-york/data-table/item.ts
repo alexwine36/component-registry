@@ -15,15 +15,6 @@ const def = new RegistryItem({
   dependencies: ['@tanstack/react-table', 'remeda'],
 });
 
-def.addUi('./components/data-table-body.tsx');
-def.addUi('./components/data-table-column-header.tsx');
-def.addUi('./components/data-table-component.tsx');
-def.addUi('./components/data-table-faceted-filter.tsx');
-def.addUi('./components/data-table-pagination.tsx');
-def.addUi('./components/data-table-toolbar.tsx');
-def.addUi('./components/data-table-view-options.tsx');
-def.addUi('./components/data-table.tsx');
-
 def.addFile({
   path: './files/react-table.d.ts',
   type: 'registry:file',
@@ -32,5 +23,13 @@ def.addFile({
 def.addHook('./hooks/use-data-table.tsx');
 def.addLib('./lib/data-table-types.ts');
 def.addLib('./lib/data-table-utils.ts');
+def.addUi('./components/ui/data-table-body.tsx');
+def.addUi('./components/ui/data-table-column-header.tsx');
+def.addUi('./components/ui/data-table-component.tsx');
+def.addUi('./components/ui/data-table-faceted-filter.tsx');
+def.addUi('./components/ui/data-table-pagination.tsx');
+def.addUi('./components/ui/data-table-toolbar.tsx');
+def.addUi('./components/ui/data-table-view-options.tsx');
+def.addUi('./components/ui/data-table.tsx');
 
 export default def;

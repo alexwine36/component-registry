@@ -1,10 +1,3 @@
-import {
-  ArrowDownIcon,
-  ArrowUpIcon,
-  ChevronsUpDown,
-  EllipsisVertical,
-  EyeOff,
-} from 'lucide-react';
 import { Button } from '@/registry/new-york/common/components/ui/button';
 import {
   DropdownMenu,
@@ -15,9 +8,19 @@ import {
   DropdownMenuTrigger,
 } from '@/registry/new-york/common/components/ui/dropdown-menu';
 import { cn } from '@/registry/new-york/common/lib/utils';
-import { flexRender } from '@tanstack/react-table';
-import type { Column, Header } from '@/registry/new-york/data-table/lib/data-table-types';
+import type {
+  Column,
+  Header,
+} from '@/registry/new-york/data-table/lib/data-table-types';
 import { toSentenceCase } from '@/registry/new-york/data-table/lib/data-table-utils';
+import { flexRender } from '@tanstack/react-table';
+import {
+  ArrowDownIcon,
+  ArrowUpIcon,
+  ChevronsUpDown,
+  EllipsisVertical,
+  EyeOff,
+} from 'lucide-react';
 
 interface DataTableColumnHeaderProps<TData, TValue>
   extends React.HTMLAttributes<HTMLDivElement> {

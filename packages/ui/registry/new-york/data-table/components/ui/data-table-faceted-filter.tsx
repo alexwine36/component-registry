@@ -19,8 +19,8 @@ import {
 } from '@/registry/new-york/common/components/ui/popover';
 import { Separator } from '@/registry/new-york/common/components/ui/separator';
 import { cn } from '@/registry/new-york/common/lib/utils';
-import { toSentenceCase } from '@/registry/new-york/data-table/lib/data-table-utils';
 import type { Header } from '@/registry/new-york/data-table/lib/data-table-types';
+import { toSentenceCase } from '@/registry/new-york/data-table/lib/data-table-utils';
 
 interface DataTableFacetedFilterProps<TData, TValue> {
   column?: Column<TData, TValue>;
@@ -61,12 +61,12 @@ export function DataTableFacetedFilter<TData, TValue>({
           {selectedValues?.size > 0 && (
             <>
               <Separator orientation="vertical" className="mx-2 h-4" />
-              <Badge  className="border-transparent bg-muted text-muted-foreground hover:bg-muted/80 px-1 font-normal lg:hidden">
+              <Badge className="border-transparent bg-muted px-1 font-normal text-muted-foreground hover:bg-muted/80 lg:hidden">
                 {selectedValues.size}
               </Badge>
               <div className="hidden space-x-1 lg:flex">
                 {selectedValues.size > 2 ? (
-                  <Badge  className="border-transparent bg-muted text-muted-foreground hover:bg-muted/80 px-1 font-normal">
+                  <Badge className="border-transparent bg-muted px-1 font-normal text-muted-foreground hover:bg-muted/80">
                     {selectedValues.size} selected
                   </Badge>
                 ) : (
@@ -74,9 +74,8 @@ export function DataTableFacetedFilter<TData, TValue>({
                     .filter((option) => selectedValues.has(option.value))
                     .map((option) => (
                       <Badge
-                        
                         key={option.value}
-                        className="border-transparent bg-muted text-muted-foreground hover:bg-muted/80 px-1 font-normal"
+                        className="border-transparent bg-muted px-1 font-normal text-muted-foreground hover:bg-muted/80"
                       >
                         {option.label}
                       </Badge>

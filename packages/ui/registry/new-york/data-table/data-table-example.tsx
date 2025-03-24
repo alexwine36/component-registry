@@ -1,6 +1,6 @@
 'use client';
 
-import { DataTable } from './components/data-table';
+import { DataTable } from './components/ui/data-table';
 import { useDataTable } from './hooks/use-data-table';
 
 const data = [
