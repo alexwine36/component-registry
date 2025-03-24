@@ -1,6 +1,6 @@
-import { globbySync } from 'globby';
 import fs from 'node:fs';
 import path from 'node:path';
+import { globbySync } from 'globby';
 export const sourceDir = path.join(__dirname, '../../public');
 export const targetDir = path.join(__dirname, '../../../../apps/web/public');
 

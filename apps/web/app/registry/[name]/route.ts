@@ -1,6 +1,6 @@
-import { NextResponse } from 'next/server';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
+import { NextResponse } from 'next/server';
 import { registryItemSchema } from 'shadcn/registry';
 
 // This route shows an example for serving a component using a route handler.

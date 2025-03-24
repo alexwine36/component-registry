@@ -1,6 +1,6 @@
+import path from 'node:path';
 import { globbySync } from 'globby';
 import { fs, vol } from 'memfs';
-import path from 'node:path';
 import type { Mock } from 'vitest';
 import { copyComponents, getFiles, sourceDir, targetDir } from '.';
 
