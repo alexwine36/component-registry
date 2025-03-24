@@ -1,4 +1,4 @@
-import { ExamplePage } from '@repo/ui/registry/new-york/common/components/example-page';
+import { ExamplePage } from '@repo/ui';
 // This page displays items from the custom registry.
 // You are free to implement this with your own design as needed.
 

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typography",
+  "type": "registry:component",
+  "title": "Typography",
+  "description": "A typography component for consistent text display",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/new-york/typography/components/typography.tsx",
+      "content": "import { cn } from '@/registry/new-york/common/lib/utils';\nimport type { VariantProps } from 'class-variance-authority';\nimport { cva } from 'class-variance-authority';\nimport type * as React from 'react';\n\nconst headingVariants = cva('scroll-m-20 font-light tracking-normal ', {\n  variants: {\n    level: {\n      1: 'text-4xl lg:text-5xl',\n      2: 'text-3xl first:mt-0',\n      3: 'text-2xl ',\n      4: 'text-xl ',\n    },\n    separator: {\n      default: '',\n      bottom: 'border-b pb-1',\n    },\n    colorVariant: {\n      default: '',\n      // cool: 'bg-cool text-transparent !bg-clip-text !bg-cover !bg-center pb-1',\n    },\n  },\n  defaultVariants: {\n    level: 1,\n    colorVariant: 'default',\n  },\n});\n\nexport interface HeadingProps\n  extends React.HTMLAttributes<HTMLHeadingElement>,\n    VariantProps<typeof headingVariants> {\n  // level: 1 | 2 | 3 | 4;\n}\n\nexport const Heading = ({\n  className,\n  level = 1,\n  colorVariant,\n  separator,\n  ...props\n}: HeadingProps) => {\n  // biome-ignore lint/suspicious/noExplicitAny: <explanation>\n  const Comp = `h${level}` as any;\n\n  return (\n    <Comp\n      className={cn(\n        headingVariants({ separator, level, colorVariant, className })\n      )}\n      {...props}\n    />\n  );\n};\n\nconst textVariants = cva('max-w-prose', {\n  variants: {\n    variant: {\n      default: 'leading-7 [&:not(:first-child)]:mt-6',\n      muted: 'text-muted-foreground',\n      bold: 'font-semibold',\n      blockquote: 'mt-6 border-l-2 pl-6 italic',\n      code: 'relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono font-semibold text-sm',\n      lead: 'text-muted-foreground text-xl',\n    },\n    size: {\n      default: '',\n      sm: 'text-sm',\n      lg: 'text-lg',\n      xl: 'text-xl',\n    },\n  },\n  defaultVariants: {\n    variant: 'default',\n    size: 'default',\n  },\n});\n\nexport interface TextProps\n  extends React.HTMLAttributes<HTMLParagraphElement>,\n    VariantProps<typeof textVariants> {}\n\nexport const Text = ({ className, size, variant, ...props }: TextProps) => {\n  // biome-ignore lint/suspicious/noExplicitAny: <explanation>\n  let Comp: any = 'p'; // `h${variant}` as any;\n\n  if (variant === 'blockquote') {\n    Comp = 'blockquote';\n  }\n  if (variant === 'code') {\n    Comp = 'code';\n  }\n  return (\n    <Comp\n      className={cn(textVariants({ size, variant, className }))}\n      {...props}\n    />\n  );\n};\n",
+      "type": "registry:ui"
+    }
+  ]
+}

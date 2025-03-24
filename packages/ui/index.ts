@@ -1,1 +1,1 @@
-// This is a placeholder file for the package ui
+export * from './registry/new-york/common/components/example-page';

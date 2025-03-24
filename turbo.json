@@ -2,14 +2,14 @@
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "build": {
-      "dependsOn": ["^generate", "^build"],
+      "dependsOn": ["@repo/ui#generate", "^build"],
       "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
     "typecheck": {
       "dependsOn": ["^typecheck"]
     },
     "dev": {
-      "dependsOn": ["^generate"],
+      "dependsOn": ["@repo/ui#generate"],
       "persistent": true,
       "cache": false
     },
