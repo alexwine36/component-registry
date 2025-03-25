@@ -12,7 +12,7 @@ import type {
   Column,
   Header,
 } from '@/registry/new-york/data-table/lib/data-table-types';
-import { toSentenceCase } from '@/registry/new-york/data-table/lib/data-table-utils';
+import { formatFacets } from '@/registry/new-york/data-table/lib/data-table-utils';
 import { flexRender } from '@tanstack/react-table';
 import {
   ArrowDownIcon,
@@ -40,10 +40,6 @@ export function DataTableColumnHeader<TData, TValue>({
     enableHiding: hideable,
     enableColumnFilter: filterable,
   } = column.columnDef;
-  let facets = new Map<unknown, number>();
-  if (column.getCanFilter()) {
-    facets = column?.getFacetedUniqueValues();
-  }
 
   if ((hideable || sortable || filterable) && column.getCanSort()) {
     return (
@@ -116,14 +112,7 @@ export function DataTableColumnHeader<TData, TValue>({
         )}
 
         {filterable ? (
-          <Filter
-            column={column}
-            facets={Array.from(facets, ([value, count]) => ({
-              value,
-              label: toSentenceCase(String(value)),
-              count,
-            }))}
-          />
+          <Filter column={column} facets={formatFacets(column)} />
         ) : null}
       </div>
     );
@@ -155,6 +144,9 @@ function Filter<TData, TValue>({
   }[];
   column: Column<TData, TValue>;
 }) {
+  if (facets.length <= 1) {
+    return null;
+  }
   const columnFilterValue = column.getFilterValue();
 
   const isChecked = (value: unknown) => {

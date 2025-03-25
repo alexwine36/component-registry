@@ -1,4 +1,4 @@
-import { type Column, flexRender } from '@tanstack/react-table';
+import { flexRender } from '@tanstack/react-table';
 import { Check, PlusCircle } from 'lucide-react';
 
 import { Badge } from '@/registry/new-york/common/components/ui/badge';
@@ -19,8 +19,11 @@ import {
 } from '@/registry/new-york/common/components/ui/popover';
 import { Separator } from '@/registry/new-york/common/components/ui/separator';
 import { cn } from '@/registry/new-york/common/lib/utils';
-import type { Header } from '@/registry/new-york/data-table/lib/data-table-types';
-import { toSentenceCase } from '@/registry/new-york/data-table/lib/data-table-utils';
+import type {
+  Column,
+  Header,
+} from '@/registry/new-york/data-table/lib/data-table-types';
+import { formatFacets } from '@/registry/new-york/data-table/lib/data-table-utils';
 
 interface DataTableFacetedFilterProps<TData, TValue> {
   column?: Column<TData, TValue>;
@@ -35,13 +38,10 @@ export function DataTableFacetedFilter<TData, TValue>({
   // title,
   //   options,
 }: DataTableFacetedFilterProps<TData, TValue>) {
-  // biome-ignore lint/suspicious/noExplicitAny: Unknown value
-  const facets = column?.getFacetedUniqueValues() || new Map<any, number>();
-  const options = Array.from(facets, ([value, count]) => ({
-    value,
-    label: toSentenceCase(String(value)),
-    count,
-  }));
+  const options = formatFacets(column);
+  if (options.length <= 1) {
+    return null;
+  }
   const title = column?.columnDef.header?.toString();
 
   const unknownValue = column?.getFilterValue();
