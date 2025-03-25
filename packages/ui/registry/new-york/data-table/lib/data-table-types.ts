@@ -2,10 +2,9 @@ import type {
   Column as OrigColumn,
   ColumnDef as OrigColumnDef,
   Header as OrigHeader,
-  Row,
   Table,
 } from '@tanstack/react-table';
-import { z } from 'zod';
+// import { z } from 'zod';
 
 export type ColumnDef<TData> = OrigColumnDef<TData> & {
   //   sortable?: boolean;
@@ -68,14 +67,14 @@ export type DataTableComponentProps<TData, TValue> = Omit<
   'selectedRows' | 'hideToolbar' | 'displayIfEmpty'
 >;
 
-export const DataTableRowActionType = z.enum(['update', 'delete']);
+// export const DataTableRowActionType = z.enum(['update', 'delete']);
 
-export type DataTableRowActionType = z.infer<typeof DataTableRowActionType>;
+// export type DataTableRowActionType = z.infer<typeof DataTableRowActionType>;
 
-export type DataTableRowAction<TData> = {
-  row: Row<TData>;
-  type: DataTableRowActionType;
-};
+// export type DataTableRowAction<TData> = {
+//   row: Row<TData>;
+//   type: DataTableRowActionType;
+// };
 
 export type StringKeyOf<TData> = Extract<keyof TData, string>;
 
