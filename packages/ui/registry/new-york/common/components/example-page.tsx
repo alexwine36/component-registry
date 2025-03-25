@@ -1,5 +1,6 @@
 import PokemonPage from '../../complex-component/page';
 import { CopyButton } from '../../copy-to-clipboard/components/copy-button';
+import { DataTableExample } from '../../data-table/data-table-example';
 import { Heading, Text } from '../../typography/components/typography';
 import { ExampleContainer } from './example-container';
 
@@ -22,6 +23,9 @@ export const ExamplePage = () => {
           <Text>Text</Text>
           <Text variant="lead">Lead Text</Text>
         </div>
+      </ExampleContainer>
+      <ExampleContainer name="data-table">
+        <DataTableExample />
       </ExampleContainer>
     </main>
   );

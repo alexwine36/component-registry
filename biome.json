@@ -6,7 +6,11 @@
   },
 
   "files": {
-    "ignore": ["**/*.cjs", "**/public/**/*.json"]
+    "ignore": [
+      "**/*.cjs",
+      "**/public/**/*.json",
+      "packages/ui/registry/new-york/common/components/ui/**"
+    ]
   },
   "linter": {
     "rules": {
