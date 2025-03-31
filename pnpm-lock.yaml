@@ -122,10 +122,6 @@ importers:
         version: 5.7.3
 
   packages/nextjs-bundle-analysis:
-    dependencies:
-      react:
-        specifier: 'catalog:'
-        version: 19.0.0
     devDependencies:
       '@repo/typescript-config':
         specifier: workspace:*
