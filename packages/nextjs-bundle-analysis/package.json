@@ -1,14 +1,12 @@
 {
-  "name": "@awine/nextjs-bundle-analysis",
+  "name": "awine-nextjs-bundle-analysis",
   "version": "1.0.0",
   "scripts": {
     "build": "tsup",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "dependencies": {
     "react": "catalog:"
   },

@@ -24,7 +24,7 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@awine/nextjs-bundle-analysis": "workspace:*",
+    "awine-nextjs-bundle-analysis": "workspace:*",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",

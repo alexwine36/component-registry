@@ -1,4 +1,4 @@
-# @awine/nextjs-bundle-analysis
+# awine-nextjs-bundle-analysis
 
 ## 1.0.0
 
