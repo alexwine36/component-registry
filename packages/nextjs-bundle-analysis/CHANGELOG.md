@@ -1,5 +1,11 @@
 # awine-nextjs-bundle-analysis
 
+## 1.1.2
+
+### Patch Changes
+
+- bd07358: Updated readme with content from Next.js Bundle Analysis
+
 ## 1.1.1
 
 ### Patch Changes
