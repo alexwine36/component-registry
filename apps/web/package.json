@@ -24,10 +24,10 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "awine-nextjs-bundle-analysis": "workspace:*",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
+    "awine-nextjs-bundle-analysis": "workspace:*",
     "typescript": "catalog:"
   }
 }
