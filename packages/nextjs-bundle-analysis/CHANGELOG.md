@@ -1,5 +1,11 @@
 # awine-nextjs-bundle-analysis
 
+## 1.1.1
+
+### Patch Changes
+
+- 441ba81: Updated access to public for changeset
+
 ## 1.1.0
 
 ### Minor Changes
